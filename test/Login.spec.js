@@ -2,20 +2,25 @@
 //A repository to store automation test scripts using the tool playwright
 import { test, expect } from '@playwright/test';
 
+// Constants
+const BASE_URL = 'https://www.saucedemo.com/';
+const USERNAME = 'standard_user';
+const PASSWORD = 'secret_sauce';
+
 test.use({
     launchOptions: {
-        slowMo: 1000 // adds 1 second delay between actions
+        slowMo: 2000 // adds 1 second delay between actions
     }
 });
 
-test('test', async ({ page }) => {
+test('test a website', async ({ page }) => {
     // login to the site
-    await page.goto('https://www.saucedemo.com/');
-    await expect(page.getByText('Swag Labs')).toBeVisible();
-    await page.getByPlaceholder('Username').fill('standard_user');
-    await page.getByPlaceholder('Password').fill('secret_sauce');
-    await page.getByRole('button', { name: 'Login' }).click();
-    await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+  await page.goto(BASE_URL);
+  await expect(page.getByText('Swag Labs')).toBeVisible();
+  await page.getByPlaceholder('Username').fill(USERNAME);
+  await page.getByPlaceholder('Password').fill(PASSWORD);
+  await page.getByRole('button', { name: 'Login' }).click();
+  await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await page.locator('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
