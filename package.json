@@ -1,0 +1,26 @@
+{
+  "name": "playwright_test_project",
+  "version": "1.0.0",
+  "description": "Playwright automation for testing login and add-to-cart flows",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asmacorporate-rgb/Playwright_Test_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asmacorporate-rgb/Playwright_Test_Project/issues"
+  },
+  "homepage": "https://github.com/asmacorporate-rgb/Playwright_Test_Project#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1"
+  }
+}
