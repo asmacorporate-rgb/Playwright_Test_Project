@@ -11,7 +11,7 @@ test.use({
   }
 });
 
-// Run before each test Login
+// Login Run before each test 
 test.beforeEach(async ({ page }) => {
   await page.goto(BASE_URL);
   await expect(page.getByText('Swag Labs')).toBeVisible();
