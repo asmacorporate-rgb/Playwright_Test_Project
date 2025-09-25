@@ -39,6 +39,6 @@ test('Add and remove items from cart', async ({ page }) => {
     // Logout
   await page.getByRole('button', { name: 'Open Menu' }).click();
   await page.locator('[data-test="logout-sidebar-link"]').click();
-  await expect(page).toHaveURL(BASE_URL); //open the inspector to debug the process
+  await expect(page).toHaveURL(BASE_URL); //open the inspector to debug the test executions
 
   });
