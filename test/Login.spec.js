@@ -2,6 +2,12 @@
 //A repository to store automation test scripts using the tool playwright
 import { test, expect } from '@playwright/test';
 
+test.use({
+  launchOptions: {
+    slowMo: 1000 // adds 1 second delay between actions
+  }
+});
+
 test('test', async({page}) => {
 // login to the site
     await page.goto('https://www.saucedemo.com/');
